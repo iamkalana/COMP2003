@@ -1,0 +1,16 @@
+Jun 13, 2023 10:30:30 AM edu.curtin.app.logger.LogInitializer init
+INFO: Logger Initialized.
+Jun 13, 2023 10:30:30 AM edu.curtin.app.entity.factories.TransportModeFactory createTransportMode
+INFO: Bus created: b001
+Jun 13, 2023 10:30:30 AM edu.curtin.app.entity.factories.TransportModeFactory createTransportMode
+INFO: Bus created: b002
+Jun 13, 2023 10:30:30 AM edu.curtin.app.entity.factories.TransportModeFactory createTransportMode
+INFO: Bus created: b003
+Jun 13, 2023 10:30:30 AM edu.curtin.app.entity.factories.TransportModeFactory createTransportMode
+INFO: Train created: t001
+Jun 13, 2023 10:30:30 AM edu.curtin.app.entity.factories.TransportModeFactory createTransportMode
+INFO: Train created: t002
+Jun 13, 2023 10:30:30 AM edu.curtin.app.Main readTransportModeFile
+INFO: Transport mode file read successfully
+Jun 13, 2023 10:30:30 AM edu.curtin.app.Main readPassengerFile
+INFO: Passenger file read successfully

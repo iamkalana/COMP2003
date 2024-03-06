@@ -1,0 +1,51 @@
+2.Appropriate use of containers
+	
+	I'm using Java Lists as containers in this program. In SingleFile Class there's a String type list to store the matching lines
+	of a file. In CompositeDirectory Class I'm using a Directory List to store multiple sub-directories or single files in that 
+	particular directory. And also there are several Strings Lists using in FindInclude and FindExclude class to store matching 
+	lines temporary.
+	
+3.Clear and distinct class/interface/method responsibilities
+	entity:
+		Directory Interface - Interface for CompositeDirectory and SingleFile classes.
+		CompositeDirectory Class - For creating objects to store multiple directory objects(CompositeDirectory/SingleFile objects)
+		SingleFile Class - For creating objects to store matching lines and other information of a single file.
+	find:
+		FindStrategy Interface - Interface for implementing the matching line finding strategies.
+		FindInclude Class - Class for implementing the included matching line finding strategy.
+		FindExclude Class - Class for implementing the excluded matching line finding strategy.
+	menu:
+		Menu Class - Abstract Class for implementing the console menu.
+		MainMenu Class - Implemented class of console main menu from Menu Abstract Class.
+		OutputFormatMenu Class - Implemented class of console output format selection menu from Menu Abstract Class.
+	logger:
+		AppLogger Class - Class for configuring the JUL logger.
+	Main Class - Main Class of the program.
+	App Class - Entry point of the program.
+	
+4.Appropriate error handling and logging
+	
+	While reading files, Exceptions can occur. Such as IOExceptions. To handle them I'm using try-catch blocks in FindInclude and FindExclude
+	classes. Since this program is a console application, the user may enter some invalid inputs which can throw InputMismatchException. This is also 
+	handled by using try-catch blocks in the Menu class and any other class that is extended from Menu Class.
+	I'm using the default Java Utility Logging(JUL) package as the logger in this program. AppLogger class contains the logger configuration method which 
+	reads the logging.properties file and configures the JUL Logger. All the exceptions and successful completion of reading files will be logged 
+	into a log file. Also the warning level log messages will be displayed on the console.
+	
+	
+5.Appropriate use of the Strategy Pattern and/or Template Method Pattern
+
+	I'm using both Strategy Pattern and Template Method Pattern in this program.
+	Strategy Design Pattern is used for implementing the matching line finding strategies. Both FindInclude and FindExclude classes implement 
+	the FindStrategy Interface for creating those two strategies.
+	Template Method Pattern is used for creating console menus. Menu Class is an Abstract Class that contains basic properties, methods and 
+	some abstract methods(Hooks) for implementing a console menu. MainMenu and OutputFormatMenu classes are extended from that menu class for creating 
+	menus for their specific purposes.
+	
+6.Appropriate use of the Composite Pattern
+	
+	I'm using Composite Pattern for working with the directories and their files. Directory Class is the instance for CompositeDirectory and 
+	SingleFile classes so both implement the Directory Class. SingleFile Class is for storing single file's data such as matching lines, matching 
+	line count and file name etc. CompositeDirectory Class objects can store List of directories(CompositeDirectory/SingleFile objects) with the 
+	directory name.
+	
